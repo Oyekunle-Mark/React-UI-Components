@@ -25,6 +25,8 @@ module.exports = {
     'jsx-quotes': 0,
     'quotes': 0,
     'react/jsx-one-expression-per-line': 0,
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0
   },
 };
