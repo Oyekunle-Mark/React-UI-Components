@@ -1,1 +1,29 @@
 /* All styles for your header Components live here */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+header .thumbnail {
+  width: 90px;
+}
+
+header .thumbnail img {
+  width: 60px;
+  height: 60px;
+  padding: 15px 5px;
+}
+
+.title {
+  vertical-align: text-top;
+}
+
+.title small {
+  color: grey;
+}
+
+.title small span {
+  position: relative;
+  bottom: 4px;
+}
