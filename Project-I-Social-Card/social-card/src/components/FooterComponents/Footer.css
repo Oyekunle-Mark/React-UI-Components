@@ -1,0 +1,23 @@
+footer {
+  width: 525px;
+  height: 50px;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+footer .icon {
+  display: inline;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+footer .icon img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+footer .icon span {
+  position: relative;
+  bottom: 10px;
+}

@@ -10,11 +10,19 @@
 .card-content .banner {
   width: 100%;
   height: 200px;
-  border-radius: 5px 5px 0 0;
+  border-radius: 4px 4px 0 0;
 }
 
 .card-content .content {
   padding: 0 15px;
+}
+
+.card-content .content h4 {
+  margin: 13px 0;
+}
+
+.card-content .content p {
+  margin: 10px 0;
 }
 
 .card-content .react-web {
