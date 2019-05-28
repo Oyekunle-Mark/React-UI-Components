@@ -1,5 +1,5 @@
 .app {
-  width: 280px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   border: 2px solid rgb(196, 189, 189);
@@ -10,7 +10,7 @@
 }
 
 .app .buttons .keys {
-  width: 210px;
+  width: 300px;
 }
 
 .app .buttons .operation {
