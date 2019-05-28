@@ -1,8 +1,8 @@
-import React from 'react';
-import './Display.css';
+import React from "react";
+import "./Display.css";
 
-const CalculatorDisplay = () => (
-  <p className='display'>0</p>
+const CalculatorDisplay = ({ displayText }) => (
+  <p className="display">{displayText}</p>
 );
 
 export default CalculatorDisplay;

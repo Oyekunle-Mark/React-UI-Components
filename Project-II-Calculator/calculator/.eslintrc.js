@@ -24,6 +24,11 @@ module.exports = {
     'react/prop-types': 0,
     'quotes': 0,
     'jsx-quotes': 0,
-    'arrow-body-style': 0
+    'arrow-body-style': 0,
+    'react/prefer-stateless-function': 0,
+    'react/destructuring-assignment': 0,
+    'react/no-access-state-in-setstate': 0,
+    'no-eval': 0,
+    'object-curly-newline': 0,
   },
 };
