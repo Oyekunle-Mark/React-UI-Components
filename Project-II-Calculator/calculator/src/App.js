@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import math from "mathjs";
 import NumberButton from "./components/ButtonComponents/NumberButton";
 import ActionButton from "./components/ButtonComponents/ActionButton";
 import CalculatorDisplay from "./components/DisplayComponents/CalculatorDisplay";
@@ -34,7 +35,7 @@ class App extends Component {
 
   evaluate() {
     this.setState({
-      total: String(eval(this.state.total))
+      total: String(math.eval(this.state.total))
     });
   }
 
