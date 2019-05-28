@@ -22,8 +22,10 @@ class App extends Component {
   }
 
   inputHandler(val) {
+    // this.state.total = this.state.total.replace(/^0+$/, '');
+
     this.setState({
-      total: this.state.total.concat(val)
+      total: this.state.total.concat(val).replace(/^0+$/, ''),
     });
   }
 
@@ -34,9 +36,13 @@ class App extends Component {
   }
 
   evaluate() {
-    this.setState({
-      total: String(math.eval(this.state.total))
-    });
+    try {
+      this.setState({
+        total: String(math.eval(this.state.total))
+      });
+    } catch (e) {
+      return;
+    }
   }
 
   render() {
