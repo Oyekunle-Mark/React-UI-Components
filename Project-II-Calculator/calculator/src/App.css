@@ -1,0 +1,24 @@
+.app {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(196, 189, 189);
+}
+
+.app .buttons {
+  display: flex;
+}
+
+.app .buttons .keys {
+  width: 180px;
+}
+
+.app .buttons .operation {
+  display: flex;
+  flex-direction: column;
+}
+
+.app .buttons .operation .number-button {
+  background: rgb(194, 40, 40);
+  color: rgb(230, 228, 228);
+}
