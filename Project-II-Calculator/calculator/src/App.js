@@ -5,7 +5,7 @@ import ActionButton from "./components/ButtonComponents/ActionButton";
 import CalculatorDisplay from "./components/DisplayComponents/CalculatorDisplay";
 import "./App.css";
 
-const keys = ["7", "8", "9", "4", "5", "6", "1", "2", "3"];
+const keys = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "."];
 const operators = ["/", "*", "-", "+"];
 
 class App extends Component {
@@ -19,13 +19,19 @@ class App extends Component {
     this.inputHandler = this.inputHandler.bind(this);
     this.clearHandler = this.clearHandler.bind(this);
     this.evaluate = this.evaluate.bind(this);
+    this.backSpace = this.backSpace.bind(this);
   }
 
   inputHandler(val) {
-    // this.state.total = this.state.total.replace(/^0+$/, '');
-
     this.setState({
-      total: this.state.total.concat(val).replace(/^0+$/, ''),
+      total: this.state.total.concat(val).replace(/^0+$/, "")
+    });
+  }
+
+  backSpace() {
+    const currentTotal = this.state.total;
+    this.setState({
+      total: currentTotal.slice(0, currentTotal.length - 1)
     });
   }
 
@@ -52,6 +58,11 @@ class App extends Component {
         <div className="buttons">
           <div className="keys">
             <ActionButton text="clear" handleClear={this.clearHandler} />
+            <NumberButton
+              text="del"
+              buttonStyle="number-button"
+              handleClick={this.backSpace}
+            />
             {keys.map(item => (
               <NumberButton
                 key={item}
