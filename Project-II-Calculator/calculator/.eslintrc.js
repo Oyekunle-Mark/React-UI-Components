@@ -30,5 +30,6 @@ module.exports = {
     'react/no-access-state-in-setstate': 0,
     'no-eval': 0,
     'object-curly-newline': 0,
+    'comma-dangle': 0
   },
 };
