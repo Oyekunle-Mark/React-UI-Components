@@ -3,6 +3,7 @@
   height: 80px;
   font-size: 30px;
   font-weight: bold;
+  outline: none;
 }
 
 .number-button:hover {
@@ -16,6 +17,7 @@
   height: 80px;
   font-size: 30px;
   font-weight: bold;
+  outline: none;
 }
 
 .action-button:hover {
