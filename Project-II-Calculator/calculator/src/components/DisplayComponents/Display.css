@@ -1,0 +1,12 @@
+.display {
+  width: 390px;
+  height: 80px;
+  font-size: 45px;
+  font-weight: lighter;
+  text-align: right;
+  margin: 0;
+  padding: 5px;
+  background: rgb(24, 23, 23);
+  color: rgb(240, 240, 240);
+  overflow: scroll;
+}

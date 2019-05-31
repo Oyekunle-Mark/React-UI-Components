@@ -1,23 +1,99 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from "react";
+import math from "mathjs";
+import NumberButton from "./components/ButtonComponents/NumberButton";
+import ActionButton from "./components/ButtonComponents/ActionButton";
+import CalculatorDisplay from "./components/DisplayComponents/CalculatorDisplay";
+import "./App.css";
 
-const App = () => {
-  return (
-    <div>
-      <h3>Welcome to React Calculator</h3>
-      <p>
-        We have given you a starter project. You'll want to build out your
-        components in their respective files, remove this code and replace it
-        with the proper components.
-      </p>
-      <p>
-        <strong>
-          Don't forget to `default export` your components and import them here
-          inside of this file in order to make them work.
-        </strong>
-      </p>
-    </div>
-  );
-};
+const keys = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "."];
+const operators = ["/", "*", "-", "+"];
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      total: ""
+    };
+
+    this.inputHandler = this.inputHandler.bind(this);
+    this.clearHandler = this.clearHandler.bind(this);
+    this.evaluate = this.evaluate.bind(this);
+    this.backSpace = this.backSpace.bind(this);
+  }
+
+  inputHandler(val) {
+    this.setState({
+      total: this.state.total.concat(val).replace(/^0+$/, "")
+    });
+  }
+
+  backSpace() {
+    const currentTotal = this.state.total;
+    this.setState({
+      total: currentTotal.slice(0, currentTotal.length - 1)
+    });
+  }
+
+  clearHandler() {
+    this.setState({
+      total: ""
+    });
+  }
+
+  evaluate() {
+    try {
+      this.setState({
+        total: String(math.eval(this.state.total))
+      });
+    } catch (e) {
+      return;
+    }
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <CalculatorDisplay displayText={this.state.total} />
+        <div className="buttons">
+          <div className="keys">
+            <ActionButton text="clear" handleClear={this.clearHandler} />
+            <NumberButton
+              text="del"
+              buttonStyle="number-button"
+              handleClick={this.backSpace}
+            />
+            {keys.map(item => (
+              <NumberButton
+                key={item}
+                text={item}
+                buttonStyle="number-button"
+                handleClick={this.inputHandler}
+              />
+            ))}
+            <ActionButton text="0" handleClick={this.inputHandler} />
+          </div>
+
+          <div className="operation">
+            {operators.map(item => (
+              <NumberButton
+                key={item}
+                buttonStyle="number-button"
+                text={item}
+                handleClick={this.inputHandler}
+              />
+            ))}
+
+            <NumberButton
+              text="="
+              buttonStyle="number-button"
+              handleEvaluate={this.evaluate}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default App;
